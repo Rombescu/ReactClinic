@@ -42,3 +42,26 @@
   gap: 3rem;
   margin: 1rem;
 }
+
+/* Links in Header */
+
+.ServicesLink {
+  text-decoration: none;
+}
+.ServicesLink:hover {
+  color: green;
+}
+
+.DepartmentsLink {
+  text-decoration: none;
+}
+.DepartmentsLink:hover {
+  color: green;
+}
+
+.ContactUsLink {
+  text-decoration: none;
+}
+.ContactUsLink:hover {
+  color: green;
+}
