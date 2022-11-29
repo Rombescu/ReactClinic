@@ -1,0 +1,39 @@
+.ActiveLink {
+  text-decoration: none;
+  color: turquoise;
+}
+
+.MakeAnAppointment {
+  text-decoration: none;
+}
+.MakeAnAppointment:hover {
+  color: green;
+}
+
+.ServicesLink {
+  text-decoration: none;
+}
+.ServicesLink:hover {
+  color: green;
+}
+
+.DoctorsLink {
+  text-decoration: none;
+}
+.DoctorsLink:hover {
+  color: green;
+}
+
+.ContactLink {
+  text-decoration: none;
+}
+.ContactLink:hover {
+  color: green;
+}
+
+.HomeLink {
+  text-decoration: none;
+}
+.HomeLink:hover {
+  color: green;
+}

@@ -1,0 +1,33 @@
+.DoctorList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
+}
+
+.Doctor {
+  color: rgb(17, 2, 59);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Verdana, sans-serif;
+  text-align: left;
+
+  display: flex;
+  flex-direction: row;
+  flex-basis: 65%;
+  width: 20rem;
+  height: 20rem;
+}
+
+.DoctorImage {
+  height: auto;
+  width: 20rem;
+  display: flex;
+  flex-shrink: 1;
+  border-radius: 50%;
+}
+
+.NameAndStory {
+  flex-direction: column;
+  flex-basis: 40%;
+  flex-wrap: wrap;
+}

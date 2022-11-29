@@ -1,35 +1,87 @@
-import { Link } from "react-router-dom";
-import "../index.css";
+import { NavLink } from "react-router-dom";
+import medical from "../images/medical.png";
+import "../styles/headerlinks.css";
+import "../styles/header.css";
+import Appointment from "./Appointment";
+import { useState } from "react";
 
 export default function Header() {
+  const [show, setShow] = useState(false);
+  const [show2, setShow2] = useState(false);
+
+  const handleClick = () => setShow(!show);
+  const handleSubmit = (date) => {
+    alert(`Appointment set`);
+  };
+
   return (
     <container className="HeaderContainer">
       <container className="LeftContainer">
         <div className="Icon">
-          <img
-            className="IconImage"
-            src="https://media.istockphoto.com/id/1004243378/vector/caduceus-health-symbol-asclepiuss-wand-icon-black-color-illustration-flat-style-simple-image.jpg?s=612x612&w=0&k=20&c=Mymt2MH3jtAIhYXUBfbm75l0bJfQdYTd6FBeaWa4vXU="
-          />
-          <a>Clinic of Wonders</a>
+          <NavLink to="/home">
+            <img className="IconImage" src={medical} />
+          </NavLink>
+          <NavLink to="/home" className="IconText">
+            Clinic of Wonders
+          </NavLink>
         </div>
         <div className="Appointment">
           <img
             className="AppointmentImage"
             src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-clipboard-512.png"
           />
-          <a>Make an appointment</a>
+          <div className="AppointmentTab">
+            <button className="AppointmentButton" onClick={handleClick}>
+              Make an appointment
+            </button>
+            {show ? (
+              <div className="AppointmentButtonTab">
+                <Appointment />
+                <button
+                  className="AppointmentButton"
+                  onClick={() => {
+                    handleClick();
+                    handleSubmit();
+                  }}
+                >
+                  Set Appointment
+                </button>
+              </div>
+            ) : null}
+          </div>
         </div>
       </container>
       <container className="Navigation">
-        <Link to="/services" className="ServicesLink">
+        <NavLink
+          to="/home"
+          className={({ isActive }) => (isActive ? "ActiveLink" : "HomeLink")}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/services"
+          className={({ isActive }) =>
+            isActive ? "ActiveLink" : "ServicesLink"
+          }
+        >
           Services
-        </Link>
-        <Link to="/departments" className="DepartmentsLink">
-          Departments
-        </Link>
-        <Link to="/contactus" className="ContactUsLink">
-          Contact us
-        </Link>
+        </NavLink>
+        <NavLink
+          to="/doctors"
+          className={({ isActive }) =>
+            isActive ? "ActiveLink" : "DoctorsLink"
+          }
+        >
+          Doctors
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive ? "ActiveLink" : "ContactLink"
+          }
+        >
+          Contact
+        </NavLink>
       </container>
     </container>
   );
